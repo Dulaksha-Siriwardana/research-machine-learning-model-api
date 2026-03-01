@@ -230,3 +230,10 @@ def predict(req: PredictRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# -----------------------------
+# Health Check Endpoint
+# -----------------------------
+@app.get("/health")
+def health_check():
+    return {"status": "ok", "message": "API is running"}
